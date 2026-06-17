@@ -71,7 +71,7 @@ runs:
     - name: Notify Slack Start
       if: ${{ (inputs.slack-channel != '') && (inputs.slack-token != '') }}
       id: notify-slack-start
-      uses: cristi-mb/slack-notify@main
+      uses: fidlabs/slack-notify@main
       with:
         message-type: 'start'
         slack-channel: ${{ inputs.slack-channel }}
@@ -161,7 +161,7 @@ runs:
 
     - name: Notify Slack Result
       if: ${{ always() && (inputs.slack-channel != '') && (inputs.slack-token != '') }}
-      uses: cristi-mb/slack-notify@main
+      uses: fidlabs/slack-notify@main
       with:
         message-type: 'results'
         slack-channel: ${{ inputs.slack-channel }}
